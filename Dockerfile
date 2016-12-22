@@ -3,7 +3,9 @@ MAINTAINER Zhan.Shi <g.shizhan.g@gmail.com>
 
 RUN apt-get install -y curl build-essential python3 python3-dev
 RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python3
-RUN pip install jupyter ipython[notebook] numpy matplotlib scipy scikit-learn pandas numexpr sympy pyzmq
+RUN pip install numpy matplotlib scipy scikit-learn pandas numexpr sympy pyzmq
+RUN pip install ipykernel jupyter ipython[notebook]
+RUN ipython3 kernel install --name python3
 
 RUN printf '#!/bin/bash \n\
             jupyter notebook --ip=0.0.0.0 > /var/log/notebook.log & \n\
