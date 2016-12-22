@@ -7,11 +7,9 @@ RUN pip install numpy matplotlib scipy scikit-learn pandas numexpr sympy pyzmq
 RUN pip install ipykernel jupyter ipython[notebook]
 RUN ipython3 kernel install --name python3
 
-RUN printf '#!/bin/bash \n\
-            jupyter notebook --ip=0.0.0.0 > /var/log/notebook.log & \n\
-            /usr/sbin/sshd -D \n\
-            tail -f /var/null \n\
-           ' >> /etc/service.sh && chmod +x /etc/service.sh
+COPY run.sh /home/run.sh
+VOLUME /notebooks
+WORKDIR /notebooks
 
 EXPOSE 22 8888
-CMD ["/etc/service.sh"]
+CMD ["/home/run.sh"]
