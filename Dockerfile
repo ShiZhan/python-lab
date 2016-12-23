@@ -1,7 +1,7 @@
-FROM zhan2016/ubuntu-server
+FROM ubuntu:16.04
 MAINTAINER Zhan.Shi <g.shizhan.g@gmail.com>
 
-RUN apt-get install -y curl python3.5 python3.5-dev
+RUN apt-get update && apt-get install -y curl python3.5 python3.5-dev
 RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python3
 RUN pip install numpy matplotlib scipy scikit-learn pandas numexpr sympy pyzmq
 RUN pip install ipykernel jupyter ipython[notebook]
