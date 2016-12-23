@@ -1,4 +1,4 @@
-FROM daocloud.io/zhan2016/ubuntu-server:master-8044678
+FROM zhan2016/ubuntu-server
 MAINTAINER Zhan.Shi <g.shizhan.g@gmail.com>
 
 RUN apt-get install -y curl python3.5 python3.5-dev
@@ -8,6 +8,7 @@ RUN pip install ipykernel jupyter ipython[notebook]
 RUN ipython3 kernel install --name python3
 
 COPY run.sh /home/run.sh
+RUN chmod +x /home/run.sh
 VOLUME /notebooks
 WORKDIR /notebooks
 
