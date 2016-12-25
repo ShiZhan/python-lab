@@ -8,10 +8,8 @@ RUN pip --no-cache-dir install ipykernel jupyter ipython[notebook]
 RUN ipython3 kernel install --name python3.5
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-COPY run.sh /home/run.sh
-RUN chmod +x /home/run.sh
 VOLUME /notebooks
 WORKDIR /notebooks
 
 EXPOSE 8888
-CMD ["/home/run.sh"]
+CMD ["/bin/sh", "-c", "/usr/local/bin/jupyter-notebook --no-browser --ip=0.0.0.0 --notebook-dir=/notebooks"]
