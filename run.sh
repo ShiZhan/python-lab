@@ -1,2 +1,2 @@
 #!/bin/bash
-jupyter notebook --ip=0.0.0.0 > /notebooks/session.log
+jupyter notebook --no-browser --ip=0.0.0.0 --notebook-dir=/notebooks
