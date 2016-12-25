@@ -13,5 +13,5 @@ RUN chmod +x /home/run.sh
 VOLUME /notebooks
 WORKDIR /notebooks
 
-EXPOSE 22 8888
+EXPOSE 8888
 CMD ["/home/run.sh"]
