@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM phusion/baseimage:0.9.19
 MAINTAINER Zhan.Shi <g.shizhan.g@gmail.com>
 
 RUN apt-get update && apt-get install -y curl python3.5 python3.5-dev
