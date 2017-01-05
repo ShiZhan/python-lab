@@ -1,11 +1,9 @@
 FROM phusion/baseimage:0.9.19
 MAINTAINER Zhan.Shi <g.shizhan.g@gmail.com>
 
-RUN apt-get update && apt-get install -y curl python3.5 python3.5-dev
-RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python3.5
-RUN pip --no-cache-dir install numpy matplotlib scipy scikit-learn pandas numexpr sympy pyzmq networkx
-RUN pip --no-cache-dir install ipykernel jupyter ipython[notebook]
-RUN ipython3 kernel install --name python3.5
+RUN apt-get update && apt-get install -y git
+RUN git clone --depth=1 https://github.com/ShiZhan/python-lab.git
+RUN cd python-lab && ./install_python.sh && ./install_jupyter.sh && ./install_stack.sh
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 VOLUME /notebooks
