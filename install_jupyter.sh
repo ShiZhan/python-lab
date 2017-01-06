@@ -1,6 +1,4 @@
 #!/bin/bash
-# script name:     install_jupyter.sh
-
 pip --no-cache-dir install jupyter
 
 apt-get -y install libncurses5-dev

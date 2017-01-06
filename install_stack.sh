@@ -1,6 +1,4 @@
 #!/bin/bash
-# script name:     install_stack.sh
-
 pip --no-cache-dir install numpy
 pip --no-cache-dir install matplotlib
 pip --no-cache-dir install sympy
@@ -8,7 +6,6 @@ pip --no-cache-dir install cython
 pip --no-cache-dir install pandas
 pip --no-cache-dir install numexpr
 pip --no-cache-dir install bottleneck
-pip --no-cache-dir install SQLAlchemy
 pip --no-cache-dir install beautifulsoup4
 pip --no-cache-dir install html5lib
 
@@ -23,3 +20,4 @@ apt-get -y install libblas-dev liblapack-dev
 apt-get -y install libatlas-base-dev gfortran
 
 pip --no-cache-dir install scipy
+pip --no-cache-dir install scikit-learn
