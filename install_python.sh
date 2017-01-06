@@ -1,5 +1,3 @@
 #!/bin/bash
-# script name:     install_python.sh
-
-apt-get install -y python3.5 python3.5-dev
-wget https://bootstrap.pypa.io/get-pip.py -O - 2> /dev/null | python3.5
+apt-get install -y curl python3.5 python3.5-dev
+curl -kL https://bootstrap.pypa.io/get-pip.py | python3.5
