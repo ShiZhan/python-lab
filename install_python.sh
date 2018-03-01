@@ -2,7 +2,7 @@
 # script name:     install_python.sh
 
 #Python 3 version to install
-version="3.6.0"
+version="3.6.4"
 
 apt-get install -y build-essential libncursesw5-dev libgdbm-dev libc6-dev zlib1g-dev libsqlite3-dev tk-dev libssl-dev openssl wget
 
